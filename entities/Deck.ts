@@ -1,3 +1,5 @@
+import { CardType } from "../enums/CardType";
+import { CardValue } from "../enums/CardValue";
 import { Card } from "./Card";
 
 export class Deck {
@@ -8,35 +10,49 @@ export class Deck {
         this.Cards = [];
     }
 
-    addCard(card: Card) {
+    public addCard(card: Card) {
         return this.Cards.push(card);
     }
 
-    display() {
+    public display(): string {
         let res: string = '';
         for (let i = 0; i < this.Cards.length; i++) {
-            res += this.Cards[i].display();
+            res += this.Cards[i].display() + '\n';
         }
         return res;
     }
-
-    cardBySymbol() {
-        //Diviser le total par le nombre de type (52 / 4 = 13)
+ 
+    public cardBySymbol(): void {
+        //Pour chaque valeurs de carte possibles
+        for (let i = 0; i < 4; i++) {
+            //Et pour chaque symboles possibles
+            for (let j = 0; j < 13; j++) {
+                //Crée une carte qui contient la valeur et le type
+               this.Cards.push(new Card(CardValue[j], CardType[i]));
+            }
+        }
     }
 
-    generateDeck() {}
+    public sort() {
+        return this.Cards.sort(() => Math.floor(Math.random() - 0.5));
+    }
 
-    sort() {}
+    public getDeck() {
+        return this.Cards;
+    }
 
-    distribute() {
+    public draw() {}
+
+    public distribute() {
         //Diviser le total des cartes par 2 puis les attribuers aux decks des joueurs
+
     }
 
-    displayCardByPlayer() {
+    public displayCardsByPlayer() {
         //Renvoie le nombre de carte du joueur dans son deck
     }
 
-    sortBelow() {
+    public sortBelow() {
         //Renvoie les cartes gagnées à la fin du deck actuel à la fin de chaque round
     }
 

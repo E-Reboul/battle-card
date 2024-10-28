@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Deck_1 = require("./entities/Deck");
+var deck = new Deck_1.Deck();
+// deck.addCard(new Card(CardValue[CardValue.AS], CardType[CardType.HEART]));
+deck.cardBySymbol();
+deck.generateDeck();
+console.log(deck.display());
+// let card: Card = new Card(CardValue[CardValue.FOUR], CardType[CardType.HEART]);
+// console.log(card.display());

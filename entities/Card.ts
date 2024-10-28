@@ -1,17 +1,15 @@
-import { CardType } from "../enums/CardType";
-import { CardValue } from "../enums/CardValue";
-
 export class Card {
 
-    protected type: CardType;
-    protected value: CardValue;
+    protected value: string;
+    protected type: string;
 
-    constructor(type: CardType, value: CardValue) {
-        this.type = type;
-        this.value = value; 
+    constructor(value: string, type: string) {
+        this.value = value;
+        this.type = type; 
     }
 
-    display() {
-        return `${new Card(this.type, this.value)}`
+    public display(): string {
+        const card: Card = new Card(this.value, this.type)
+        return `${card.value} of ${card.type}`;
     }
 }
