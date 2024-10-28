@@ -6,8 +6,8 @@ export class Player {
     private deck: Deck[];
     
     constructor(name: string) {
-        this.deck = [];
         this.name = name;
+        this.deck = [];
     }
 
     playCard() {

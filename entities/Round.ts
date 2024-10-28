@@ -10,12 +10,14 @@ export class Round {
         this.nbPlayers = [];
     }
 
+    displayPlayers() {
+        return this.nbPlayers;
+    }
+
     incrementRound() {
         return this.nbRounds + 1;
     }
 
-    displayPlayers() {
-        return this.nbPlayers;
-    }
+    
 
 }

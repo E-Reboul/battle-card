@@ -1,13 +1,17 @@
 import { CardType } from "../enums/CardType";
 import { CardValue } from "../enums/CardValue";
 
-export abstract class Card {
+export class Card {
 
-    protected value: CardValue;
     protected type: CardType;
+    protected value: CardValue;
 
-    constructor(value: CardValue, type: CardType) {
-        this.value = value; 
+    constructor(type: CardType, value: CardValue) {
         this.type = type;
+        this.value = value; 
+    }
+
+    display() {
+        return `${new Card(this.type, this.value)}`
     }
 }
